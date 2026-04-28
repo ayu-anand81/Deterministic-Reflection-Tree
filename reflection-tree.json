@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "START",
+      "parentId": null,
+      "type": "start",
+      "text": "Good evening. So, let's look at your day.",
+      "options": [],
+      "target": "STEP1"
+    },
+
+    {
+      "id": "STEP1",
+      "parentId": "START",
+      "type": "question",
+      "text": "How would you describe today in one word?",
+      "options": ["Exciting", "Frustrating", "Mixed", "Difficult"],
+      "target": null
+    },
+
+    {
+      "id": "STEP2",
+      "parentId": "STEP1",
+      "type": "decision",
+      "text": "",
+      "options": "answer=Exciting:Q_EXCITING;answer=Frustrating:Q_FRUSTRATING;answer=Mixed:Q_MIXED;answer=Difficult:Q_DIFFICULT",
+      "target": null
+    },
+
+    {
+      "id": "Q_EXCITING",
+      "parentId": "STEP2",
+      "type": "question",
+      "text": "What made today exciting?",
+      "options": [
+        "I created something new",
+        "I learned something new"
+      ],
+      "target": "DECISION_EXCITING"
+    },
+
+    {
+      "id": "Q_FRUSTRATING",
+      "parentId": "STEP2",
+      "type": "question",
+      "text": "What felt most frustrating?",
+      "options": [
+        "Mental fatigue",
+        "Work drained me"
+      ],
+      "target": "DECISION_FRUSTRATING"
+    },
+
+    {
+      "id": "Q_MIXED",
+      "parentId": "STEP2",
+      "type": "question",
+      "text": "What made the day feel mixed?",
+      "options": [
+        "I made a mistake",
+        "Someone affected my day"
+      ],
+      "target": "DECISION_MIXED"
+    },
+
+    {
+      "id": "Q_DIFFICULT",
+      "parentId": "STEP2",
+      "type": "question",
+      "text": "What made today difficult?",
+      "options": [
+        "Too much pressure",
+        "Not enough support"
+      ],
+      "target": "DECISION_DIFFICULT"
+    },
+
+    {
+      "id": "DECISION_EXCITING",
+      "parentId": "Q_EXCITING",
+      "type": "decision",
+      "text": "",
+      "options": "answer=I created something new|I learned something new:REFLECTION_POSITIVE",
+      "target": null
+    },
+
+    {
+      "id": "DECISION_FRUSTRATING",
+      "parentId": "Q_FRUSTRATING",
+      "type": "decision",
+      "text": "",
+      "options": "answer=Mental fatigue|Work drained me:REFLECTION_STRAIN",
+      "target": null
+    },
+
+    {
+      "id": "DECISION_MIXED",
+      "parentId": "Q_MIXED",
+      "type": "decision",
+      "text": "",
+      "options": "answer=I made a mistake|Someone affected my day:REFLECTION_MIXED",
+      "target": null
+    },
+
+    {
+      "id": "DECISION_DIFFICULT",
+      "parentId": "Q_DIFFICULT",
+      "type": "decision",
+      "text": "",
+      "options": "answer=Too much pressure|Not enough support:REFLECTION_HARD",
+      "target": null
+    },
+
+    {
+      "id": "REFLECTION_POSITIVE",
+      "parentId": "DECISION_EXCITING",
+      "type": "reflection",
+      "text": "You noticed something meaningful today. That usually reflects engagement and growth.",
+      "options": [],
+      "target": "SUMMARY"
+    },
+
+    {
+      "id": "REFLECTION_STRAIN",
+      "parentId": "DECISION_FRUSTRATING",
+      "type": "reflection",
+      "text": "Frustration often reveals where your energy was stretched. Noticing that matters.",
+      "options": [],
+      "target": "SUMMARY"
+    },
+
+    {
+      "id": "REFLECTION_MIXED",
+      "parentId": "DECISION_MIXED",
+      "type": "reflection",
+      "text": "Mixed days often hold both responsibility and outside influence. Seeing both clearly can help.",
+      "options": [],
+      "target": "SUMMARY"
+    },
+
+    {
+      "id": "REFLECTION_HARD",
+      "parentId": "DECISION_DIFFICULT",
+      "type": "reflection",
+      "text": "Difficult days can show whether pressure felt personal or shared with others.",
+      "options": [],
+      "target": "SUMMARY"
+    },
+
+    {
+      "id": "SUMMARY",
+      "parentId": null,
+      "type": "summary",
+      "text": "Thank you for taking a moment to reflect today.",
+      "options": [],
+      "target": "END"
+    },
+
+    {
+      "id": "END",
+      "parentId": "SUMMARY",
+      "type": "end",
+      "text": "See you tomorrow.",
+      "options": [],
+      "target": null
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "START",
+      "type": "start",
+      "text": "Good evening. Let's look at your day.",
+      "target": "A1_OPEN"
+    },
+
+    {
+      "id": "A1_OPEN",
+      "type": "question",
+      "text": "How would you describe today in one word?",
+      "options": ["Tough", "Productive", "Mixed", "Frustrating"],
+      "targetMap": {
+        "Tough": "A1_LOW",
+        "Frustrating": "A1_LOW",
+        "Productive": "A1_HIGH",
+        "Mixed": "A1_HIGH"
+      }
+    },
+
+    {
+      "id": "A1_HIGH",
+      "type": "question",
+      "text": "When something went well today, what made it happen?",
+      "options": [
+        "I prepared well",
+        "The team came through",
+        "I got lucky",
+        "I adapted on the fly"
+      ],
+      "target": "A1_REFLECT"
+    },
+
+    {
+      "id": "A1_LOW",
+      "type": "question",
+      "text": "When things got difficult, what was your first instinct?",
+      "options": [
+        "Figure out what I could control",
+        "Wait for someone to step in",
+        "Push through alone",
+        "Feel stuck"
+      ],
+      "target": "A1_REFLECT"
+    },
+
+    {
+      "id": "A1_REFLECT",
+      "type": "reflection",
+      "text": "Today showed how you responded to situations — both within and outside your control.",
+      "target": "A2_OPEN"
+    },
+
+    {
+      "id": "A2_OPEN",
+      "type": "question",
+      "text": "Think about one interaction today. Were you giving or expecting?",
+      "options": [
+        "I helped someone",
+        "I taught someone something",
+        "I needed support",
+        "I felt overlooked"
+      ],
+      "target": "A2_REFLECT"
+    },
+
+    {
+      "id": "A2_REFLECT",
+      "type": "reflection",
+      "text": "Your interactions today shaped both your experience and others'.",
+      "target": "SUMMARY"
+    },
+
+    {
+      "id": "SUMMARY",
+      "type": "summary",
+      "text": "You navigated today through actions, reactions, and interactions.",
+      "target": "END"
+    },
+
+    {
+      "id": "END",
+      "type": "end",
+      "text": "See you tomorrow."
+    }
+  ]
+}
