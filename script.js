@@ -1,5 +1,5 @@
 // CHANGE THIS TO LOAD DIFFERENT TREE FILES
-const TREE_FILE = "reflection-tree2.json"; // Change to "reflection-tree2.json" to use the other tree
+const TREE_FILE = "reflection-tree.json"; // Change to "reflection-tree2.json" to use the other tree
 
 let treeData = null;
 let currentNode = null;
